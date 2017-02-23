@@ -1,0 +1,25 @@
+[ {
+	"id" : 1,
+  	"title" : "Which city is best for eating out ?",
+	"createdDate" : "17/Feb/2017",
+    "content" : "I love living in Berlin, but I've really been missing the amazing variety of good food in #London.",
+	  "comments" : [
+		{
+			"id": 1,
+            "createdDate" : "18/Feb/2017",
+			"content": "I think New York will be the best option.",
+            "likes" : 2,
+  	        "disLikes" : 1
+		},
+		{
+			"id": 1,
+            "createdDate" : "19/Feb/2017",
+			"content": "I perfer London.",
+            "likes" : 5,
+  	        "disLikes" : 1
+		}
+	],
+  	"likes" : 4,
+  	"disLikes" : 1
+}
+]

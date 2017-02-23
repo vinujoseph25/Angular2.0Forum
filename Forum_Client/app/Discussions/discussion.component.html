@@ -1,0 +1,15 @@
+<h2>Discussions</h2>
+<ul class="books">
+	<li *ngFor="let discussion of discussions">
+        <div class="book-element"> 
+        {{discussion.id}}<br>
+        {{discussion.question}}<br>
+        {{discussion.createdDate}}<br>
+        <li *ngFor="let answer of discussion.answers">
+            {{answer.text}}<br>
+        </li>
+        {{discussion.countOfAnswers}}
+        </div> 
+	</li>
+</ul>
+<div class="error" *ngIf="error">{{error}}</div>

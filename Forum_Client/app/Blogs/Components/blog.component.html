@@ -1,0 +1,38 @@
+<ul class="DataList Discussions">
+    <li class="Item Alt " id="i_10" *ngFor="let blog of blogs">
+        <div class="SubTab">
+            <h2>{{blog.title}}</h2>
+            <div class="CommentInfo">
+                <div class="Meta">
+                    <span class="LastCommentDate">{{blog.createdDate}}</span> </div>
+            </div>
+            <div class="Message">
+                {{blog.content}}
+                <br> Likes: {{blog.likes}}
+                <br>Dislikes: {{blog.disLikes}}
+            </div>
+            <button class="label label-warning" type="button" (click)="toggleComment()">Comments<span class="badge">{{commentCount}}</span> </button>
+            <div class="Comment" *ngIf="commentHide">Comments :<br>
+                <ul class="CommentInfo" *ngFor="let comment of blog.comments">
+                    <blockquote>
+                        <p>{{comment.content}}</p>
+                        <small>{{comment.createdDate}}
+                    <cite title="Source Title">
+                    <br> Likes: {{comment.likes}} , Dislikes: {{comment.disLikes}}
+                        </cite></small>
+                    </blockquote>
+                </ul>
+            </div>
+        </div>
+    </li>
+</ul>
+<form (ngSubmit)="addBlog(newBlog)" #f="ngForm" novalidate>
+    <div>
+        <label>Title :</label>
+        <input type="text" name="title" [(ngModel)]="newBlog.title" required #title="ngModel">
+            <small>
+			    <div [hidden]="title.valid || (title.pristine && !f.submitted)">Title is required.</div>
+			</small>
+    </div>
+    <button type="submit" class="btn btn-default" [disabled]="!f.form.valid">Submit</button>
+</form>
